@@ -1,21 +1,27 @@
 class Ticket {
     constructor(destination, price, status) {
         this.destination = destination;
-        this.price = price;
+        this.price = Number(price);
         this.status = status;
     }
 
 }
 
-function f(input) {
+function f(ticketsInput, criterion) {
     let tickets = [];
-    let criterion = input.pop();
-    for (const ticketInfo of input) {
+    for (const ticketInfo of ticketsInput) {
         const [destination, price, status] = ticketInfo.split("|");
         let ticket = new Ticket(destination, price, status);
         tickets.push(ticket);
     }
     
+    tickets.sort((a, b) => {
+        if (criterion === 'price') {
+            return a.price - b.price;
+        } else {
+            return a[criterion].localeCompare(b[criterion]);
+        }
+    });
     console.log(tickets)
 
 }
