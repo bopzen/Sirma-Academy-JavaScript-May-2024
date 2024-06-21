@@ -1,0 +1,11 @@
+input[type="text"] {
+    background-color:antiquewhite
+}
+
+input[type="submit"] {
+    color: blue;
+}
+
+a[href="https://example.com"] {
+     color: red;
+}

@@ -1,0 +1,6 @@
+.height-example {
+    height: 70%;
+    min-height: 400px;
+    max-height: 500px;
+    background-color: antiquewhite;
+}

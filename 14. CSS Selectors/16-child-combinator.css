@@ -1,0 +1,8 @@
+div > p {
+     color: red;
+}
+
+.parent > p {
+     color: blue;
+}
+
