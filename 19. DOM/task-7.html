@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Change the content of a cell</title>
+  <style type="text/css">
+    body {margin: 30px;}
+  </style>  
+</head>
+<body>
+  <table id="myTable" border="1">
+  </table>
+  <form>
+    <label for="frow">Row</label>
+    <input type="text" id="frow" name="frow">
+    <label for="fcolumn">Column</label>
+    <input type="text" id="fcolumn" name="fcolumn">
+    <input type="button" onclick="createTable()" value="Create the table">
+  </form>
+</body>
+<script>
+    function createTable() {
+        const row = document.getElementById("frow").value;
+        const column = document.getElementById("fcolumn").value;
+        let table = document.querySelector("table");
+
+        const firstColumn = document.createElement("td");
+        firstColumn.textContent = `Row - ${row}` ;
+
+        const secondColumn = document.createElement("td");
+        secondColumn.textContent = `Column - ${column}` ;
+
+        const newRow = document.createElement("tr");
+        newRow.appendChild(firstColumn);
+        newRow.appendChild(secondColumn);
+        table.appendChild(newRow);
+    }
+</script>
+</html>
+

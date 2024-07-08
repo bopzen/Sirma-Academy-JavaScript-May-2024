@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset=utf-8 />
+  <title>Change the content of a cell</title>
+</head>
+<body>
+  <table id="myTable" border="1">
+    <tr>
+      <td>Row1 cell1</td>
+      <td>Row1 cell2</td>
+    </tr>
+    <tr>
+      <td>Row2 cell1</td>
+      <td>Row2 cell2</td>
+    </tr>
+    <tr>
+      <td>Row3 cell1</td>
+      <td>Row3 cell2</td>
+    </tr>
+  </table>
+  <form>
+    <label for="frow">Row</label>
+    <input type="text" id="frow" name="frow">
+    <label for="fcolumn">Column</label>
+    <input type="text" id="fcolumn" name="fcolumn">
+    <label for="fstring">New String</label>
+    <input type="text" id="fstring" name="fstring">  
+    <input type="button" onclick="changeContent()" value="Change content">
+  </form>
+</body>
+
+<script>
+    function changeContent() {
+        const row = document.getElementById("frow").value;
+        const column = document.getElementById("fcolumn").value;
+        const newString = document.getElementById("fstring").value;
+
+        if (document.getElementsByTagName("tr").length >= row) {
+            let tableRow = document.getElementsByTagName("tr")[row - 1];
+
+            if (tableRow.getElementsByTagName("td").length >= column) {
+                let tableColumn = tableRow.getElementsByTagName("td")[column - 1];
+                tableColumn.textContent = newString;
+            } else {
+                alert("Invalid column index")
+            }
+        } else {
+            alert("Invalid row index")
+        }
+    }
+</script>
+</html>
+
