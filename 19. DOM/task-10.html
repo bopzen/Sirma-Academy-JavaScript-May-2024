@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sphere Volume</title>
+</head>
+<style>
+    form {
+        display: flex;
+        flex-direction: column;
+        width: 300px;
+    }
+</style>
+<body>
+    <div>
+        <p>Input radius value and get the volume of a sphere.</p>
+        <form>
+            <label for="fradius">Radius</label>
+            <input type="text" id="fradius" name="fradius">
+            <label for="fvolume">Volume</label>
+            <input type="text" id="fvolume" name="fvolume" disabled>
+            <input type="button" onclick="calculateVolume()" value="Calculate">
+        </form>
+    </div>
+</body>
+<script>
+    function calculateVolume() {
+        const radius = Number(document.getElementById("fradius").value);
+        const volume = document.getElementById("fvolume");
+        const volumeValue = 4 / 3 * Math.PI * radius * radius * radius;
+        volume.value = volumeValue;
+    }
+</script>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Window Size</title>
+</head>
+<body>
+    <p class="width">Window width: <span></span></p>
+    <p class="height">Window height: <span></span></p>
+</body>
+<script>
+    function updateDimensions() {
+        const windowWidth = window.innerWidth
+        const windowHeight = window.innerHeight
+        const width = document.querySelector(".width span");
+        const height = document.querySelector(".height span");
+        width.textContent = windowWidth;
+        height.textContent = windowHeight;
+    }
+
+    updateDimensions()
+    window.addEventListener('resize', updateDimensions)
+
+</script>
+</html>
